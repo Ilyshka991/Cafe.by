@@ -1,0 +1,90 @@
+#rating, .show_rating {
+    width: 95%;
+    border-radius: 4px;
+    box-shadow: 0 0 16px 5px #ea2a2a;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.show_rating {
+    margin-bottom: 20px;
+    box-shadow: 0 0 1px 3px #0cc1ba;
+}
+
+#rating p, .show_rating p {
+    margin: 0;
+    padding: 0;
+}
+
+.stars {
+    float: left;
+}
+
+.param {
+    width: 84px;
+    margin: 0 6px 0 0;
+    text-align: right;
+}
+
+.param, .rating {
+    line-height: 28px;
+}
+
+.mark {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.stars, .progress {
+    width: 130px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.progress {
+    background: #FFEE00;
+}
+
+input.mark_value {
+    text-align: left;
+    width: 28px;
+    border: none;
+    padding: 0px;
+    background: #5f9ea000;
+}
+
+.rating {
+    display: inline-block;
+    height: 21px;
+    margin: 0 0 0 8px;
+    font-weight: bold;
+}
+
+.param, .stars_form, div#send-review {
+    display: inline-block;
+    height: 21px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.layer {
+    overflow: scroll;
+    width: 100%;
+    height: 361px;
+    padding-top: 21px;
+    padding-left: 4px;
+    box-shadow: 0 0 16px 5px #ea2a2a;
+}
+
+.stars {
+    background: url(/images/icon/stars.png);
+}
+
+input#review_text {
+    width: 83%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+}

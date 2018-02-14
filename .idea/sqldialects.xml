@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/resources/databasecreator/cafeby_account.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/databasecreator/cafeby_admin.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/databasecreator/cafeby_client.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/databasecreator/cafeby_order.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/databasecreator/cafeby_orderproducts.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/databasecreator/cafeby_product.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/databasecreator/cafeby_review.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/databasecreator/cafeby_staff.sql" dialect="MySQL" />
+  </component>
+</project>

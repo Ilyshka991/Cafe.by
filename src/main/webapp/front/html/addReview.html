@@ -1,0 +1,19 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!--Review-->
+<div id="rating">
+    <form method="post" id="add-review" action="/cafe.by/add_review">
+        <h2>${stay_review}</h2>
+        <textarea name="review_text" class="review_text" placeholder=${add_review_word}></textarea>
+        <div class="mark">
+            <div class="param">${mark_word}:</div>
+            <div class="stars_form">
+                <div class="stars"></div>
+                <p class="progress"></p>
+            </div>
+            <div class="rating"><input type="text" class="mark_value" id="mark_value" name="mark_value"
+                                       value="5.0">
+            </div>
+            <div id="send-review"><input type="submit" value=${send_review_word}></div>
+        </div>
+    </form>
+</div>

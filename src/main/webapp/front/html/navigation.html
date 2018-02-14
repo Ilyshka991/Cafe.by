@@ -1,0 +1,66 @@
+<c:choose>
+    <c:when test="${pageCount!=0}">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <c:choose>
+                    <c:when test="${currentPage==1}">
+                        <li class="page-item" style="visibility: hidden">
+                            <a class="page-link" href="#0" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">${previous}</span>
+                            </a>
+                        </li>
+                    </c:when>
+                    <c:otherwise>
+                        <li class="page-item">
+                            <a class="page-link"
+                               href="/cafe.by/set_current_page?current_page=${currentPage-1}"
+                               aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">${previous}</span>
+                            </a>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
+                <%--For displaying all available pages--%>
+                <c:forEach begin="${(currentPage-2 <= 1) ? 1 : currentPage-2}"
+                           end="${(currentPage+2>=pageCount) ? pageCount : currentPage+2}" var="i">
+                    <c:choose>
+                        <c:when test="${currentPage eq i}">
+                            <li class="page-item active">
+                                <a class="page-link" style="color: red"
+                                   href="/cafe.by/set_current_page?current_page=${i}">${i}</a>
+                            </li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="page-item">
+                                <a class="page-link"
+                                   href="/cafe.by/set_current_page?current_page=${i}">${i}</a>
+                            </li>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+                <c:choose>
+                    <c:when test="${currentPage eq pageCount}">
+                        <li class="page-item" style="visibility: hidden">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">${next}</span>
+                            </a>
+                        </li>
+                    </c:when>
+                    <c:otherwise>
+                        <li class="page-item">
+                            <a class="page-link"
+                               href="/cafe.by/set_current_page?current_page=${currentPage+1}"
+                               aria-label="Next">
+                                <span class="sr-only">${next}</span>
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
+            </ul>
+        </nav>
+    </c:when>
+</c:choose>

@@ -1,0 +1,49 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<div id="add-form">
+        <h2>${add_product_word}</h2>
+        <p class="fieldset">
+            <select id="product-type" class="product_type" name="product_type">
+                <option value="" disabled selected>${type_product_word}</option>
+                <option value="soup" >${soup_word}</option>
+                <option value="hotDish">${hot_dishes_word}</option>
+                <option value="bakeryProduct">${bakery_products_word}</option>
+                <option value="salad">${salad_word}</option>
+                <option value="garnish">${garnish_word}</option>
+                <option value="pizza">${pizza_word}</option>
+                <option value="dessert">${desserts_word}</option>
+                <option value="juice">${juice_word}</option>
+                <option value="water">${water_word}</option>
+                <option value="hotDrink">${hot_drink_word}</option>
+                <option value="soda">${soda_word}</option>
+            </select>
+            <span id="product-type-span" class="cd-error-message">${make_choose}</span>
+        </p>
+
+        <p class="fieldset">
+            <input type="text" name="name_ru" class="name_ru" id="name-ru" placeholder=${name_ru_word}>
+            <span id="name-ru-span" class="cd-error-message">${name_ru_mistake}</span>
+        </p>
+        <p class="fieldset">
+            <input type="text" name="name_en" class="name_en" id="name-en" placeholder=${name_en_word}>
+            <span id="name-en-span" class="cd-error-message">${name_en_mistake}</span>
+        </p>
+        <p class="fieldset">
+            <input type="text" name="value" class="value" id="value" placeholder=${volume_word}>
+            <span id="value-span" class="cd-error-message">${valume_mistake}</span>
+        </p>
+        <p class="fieldset">
+            <input type="text" name="cost" class="cost" id="cost" placeholder=${cost_word}>
+            <span id="cost-span" class="cd-error-message">${cost_mistake}</span>
+        </p>
+        <textarea name="description_ru" class="description_ru" value="${product.descriptionRu}" id="description-ru" placeholder=${desc_ru_word}></textarea>
+        <textarea name="description_en" class="description_en" value="${product.descriptionEn}" id="description-en" placeholder=${desc_en_word}></textarea>
+
+        <p class="fieldset">
+            <input name="image_name" class="image_name" id="image-name" type="text" value=${choose_file_word}>
+            <a href="#0" id="a-image-name" class="image-load">""</a>
+            <span id="image-name-span" class="cd-error-message">${choose_not_choosen_word}</span>
+        </p>
+    <input type="file" style="display:none;" id="file" name="file" multiple
+           accept="image/*,image/jpeg"/>
+    <input type="submit" id="add" value=${add_button_word}>
+</div>

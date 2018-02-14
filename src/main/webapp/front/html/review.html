@@ -1,0 +1,35 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!--Review-->
+<div class="show_rating">
+    <form method="post" id="add-review" action="/cafe.by/delete_review?reviewId=${review.reviewId}">
+        <h2>${review.clientName} ${review.clientSurname}</h2>
+        <c:choose>
+            <c:when test="${!(review.text eq '')}">
+                <textarea name="review_text" disabled>${review.text}</textarea>
+            </c:when>
+        </c:choose>
+        <div class="mark">
+            <div class="param">${mark_word}:</div>
+            <div class="stars_form">
+                <div class="stars"></div>
+                <p class="progress" id="progress_${review.reviewId}"></p>
+            </div>
+            <div class="rating"><input type="text" class="mark_value"
+                                       id="mark_value_${review.reviewId}" value="${review.mark}">
+            </div>
+            <script>
+                $(document).ready(function () {
+                    var width = $('.stars').width();
+                    var mark = $('#mark_value_${review.reviewId}').val();
+                    var new_width = width * mark / 5.0;
+                    $("#progress_${review.reviewId}").width(new_width);
+                });
+            </script>
+        </div>
+        <c:choose>
+            <c:when test="${user.role eq 'admin'}">
+                <input type="submit" value=${delete_word}>
+            </c:when>
+        </c:choose>
+    </form>
+</div>

@@ -1,0 +1,108 @@
+<div class="cd-user-modal"> <!-- все формы на фоне затемнения-->
+    <div class="cd-user-modal-container"> <!-- основной контейнер -->
+        <ul class="cd-switcher">
+            <li><a href="#0">${signin_button}</a></li>
+            <li><a href="#0">${signup_button}</a></li>
+        </ul>
+
+        <div id="login"> <!-- форма входа -->
+            <form id="login-form" class="cd-form" method="POST" action="/cafe.by/sign_in">
+                <p class="fieldset">
+                    <label class="image-replace cd-login" for="signin-login">${login_word}</label>
+                    <input class="full-width has-padding has-border" name="signin_login" id="signin-login" type="text"
+                           placeholder="${login_word}">
+                    <span class="cd-error-message">${mistake_login_word}</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-password" for="signin-password">${password_word}</label>
+                    <input class="full-width has-padding has-border" name="signin_password" id="signin-password"
+                           type="password" placeholder="${password_word}">
+                    <a href="#0" id="a-signin-password" class="hide-password">""</a>
+                    <span class="cd-error-message">${mistake_password_word}</span>
+                </p>
+
+                <p class="fieldset">
+                    <input class="full-width" type="submit" value=${comein_button}>
+                </p>
+            </form>
+
+            <p class="cd-form-bottom-message"><a href="#0">${forgot_pass_word}</a></p>
+            <a href="#0" class="cd-close-form">Close</a>
+        </div> <!-- login -->
+
+        <div id="cd-signup"> <!-- форма регистрации -->
+            <form id="signup-form" class="cd-form" method="POST" action="/cafe.by/sign_up">
+                <p class="fieldset">
+                    <label class="image-replace cd-surname" for="signup-surname">${surname_word}</label>
+                    <input class="full-width has-padding has-border" name="signup_surname" id="signup-surname"
+                           type="text"
+                           placeholder=${surname_word}>
+                    <span class="cd-error-message">${mistake_surname_word}</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-name" for="signup-name">${name_word}</label>
+                    <input class="full-width has-padding has-border" name="signup_name" id="signup-name" type="text"
+                           placeholder=${name_word}>
+                    <span class="cd-error-message">${mistake_name_word}</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-login" for="signin-login">${login_word}</label>
+                    <input class="full-width has-padding has-border" name="signup_login" id="signup-login" type="text"
+                           placeholder=${login_word}>
+                    <span class="cd-error-message">${mistake_login_word}</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-email" for="signup-email">${email_word}</label>
+                    <input class="full-width has-padding has-border" name="signup_email" id="signup-email"
+                           type="email" placeholder=${email_word}>
+                    <span class="cd-error-message">${mistake_email_word}</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-password" for="signup-password">{password_word}</label>
+                    <input class="full-width has-padding has-border" name="signup_password" id="signup-password"
+                           type="password"
+                           placeholder=${password_word}>
+                    <a href="#0" id="a-signup-password" class="hide-password">""</a>
+                    <span class="cd-error-message">${mistake_password_word}</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-password" for="signup-rePassword">{re_password_word}</label>
+                    <input class="full-width has-padding has-border" id="signup-rePassword" type="password"
+                           placeholder=${re_password_word}>
+                    <a href="#0" id="a-signup-rePassword" class="hide-password">""</a>
+                    <span class="cd-error-message">${re_password_mistake}</span>
+                </p>
+
+                <p class="fieldset">
+                    <input class="full-width" type="submit" value=${create_button}>
+                </p>
+            </form>
+
+        </div> <!-- cd-signup -->
+
+        <div id="reset-password"> <!-- форма восстановления пароля -->
+            <form id="reset-form" class="cd-form" method="POST" action="/cafe.by/reset_password">
+                <p class="cd-form-message">${re_message_word}</p>
+                <p class="fieldset">
+                    <label class="image-replace cd-email" for="reset-email">${email_word}</label>
+                    <input class="full-width has-padding has-border" name="reset_email" id="reset-email" type="email"
+                           placeholder=${email_word}>
+                    <span class="cd-error-message" id="reset-email-span">${mistake_email_word}</span>
+                </p>
+
+                <p class="fieldset">
+                    <input class="full-width" type="submit" value=${re_pass_word}>
+                </p>
+
+                <p class="cd-form-bottom-message"><a href="#0">${back_word}</a></p>
+            </form>
+        </div> <!-- cd-reset-password -->
+        <a href="#0" class="cd-close-form">${close_word}</a>
+    </div> <!-- cd-user-modal-container -->
+</div> <!-- cd-user-modal -->
