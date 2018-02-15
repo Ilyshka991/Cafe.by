@@ -7,12 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CafeBy" />
-        <module name="EpamCafe" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="CafeBy" target="1.7" />
-      <module name="EpamCafe" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

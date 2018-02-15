@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="ROOT:war exploded">
-    <output-path>C:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps/ROOT</output-path>
+  <artifact type="exploded-war" name="CafeBy:war exploded">
+    <output-path>$PROJECT_DIR$/target/CafeBy</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -17,7 +17,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/EpamCafe/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/CafeBy/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="CafeBy/web/Web" />
     </root>

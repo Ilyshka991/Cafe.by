@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 /**
  * class AccountDAO created for working with clients' accounts
  */
@@ -85,7 +86,7 @@ public class AccountDAO implements IAccountDao {
                 return false;
             }
         } catch (SQLException e) {
-           return false;
+            return false;
         } catch (ConnectionException e) {
             throw new DaoException(e);
         } finally {
@@ -153,7 +154,7 @@ public class AccountDAO implements IAccountDao {
                 return false;
             }
         } catch (SQLException e) {
-           return false;
+            return false;
         } catch (ConnectionException e) {
             throw new DaoException(this.getClass() + ":" + e.getMessage());
         } finally {
@@ -180,7 +181,7 @@ public class AccountDAO implements IAccountDao {
             resultSet = statement.executeQuery();
             return resultSet.next();
         } catch (SQLException e) {
-           return false;
+            return false;
         } catch (ConnectionException e) {
             throw new DaoException(this.getClass() + ":" + e.getMessage());
         } finally {
