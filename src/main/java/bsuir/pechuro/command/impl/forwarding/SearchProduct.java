@@ -17,20 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * class SearchProduct created to search information about products
- */
+
 public class SearchProduct implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(Index.class);
     private ServiceFactory serviceFactory = ServiceFactory.getInstance();
     private JspPageName jspPageName = JspPageName.INDEX;
     private String productName;
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.INFO, "Search command start");
@@ -51,10 +45,7 @@ public class SearchProduct implements ICommand {
         return jspPageName.getPath();
     }
 
-    /**
-     * @param request
-     * @throws ServiceException
-     */
+
     private void setPageProduct(HttpServletRequest request) throws ServiceException {
         IProductService productService = serviceFactory.getProducteService();
         List<Product> products = productService.getAllProducts();

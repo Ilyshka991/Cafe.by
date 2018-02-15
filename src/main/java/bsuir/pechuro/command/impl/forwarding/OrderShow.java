@@ -16,17 +16,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * class OrderShow created to show orders
- */
+
 public class OrderShow implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(OrderShow.class);
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.DEBUG, "start order show");

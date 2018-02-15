@@ -17,9 +17,7 @@ import bsuir.pechuro.buisness.review.dao.impl.ReviewDao;
 import bsuir.pechuro.buisness.staff.dao.IStaffDao;
 import bsuir.pechuro.buisness.staff.dao.impl.StaffDAO;
 
-/**
- * class DaoFactory created to choose factory for working
- */
+
 public class DaoFactory {
     private static final DaoFactory instance = new DaoFactory();
     private final IClientDao clientDao = new ClientDAO();
@@ -35,65 +33,45 @@ public class DaoFactory {
     private DaoFactory() {
     }
 
-    /**
-     * @return DaoFactory
-     */
+
     public static DaoFactory getInstance() {
         return instance;
     }
 
-    /**
-     * @return IClientDao
-     */
+
     public IClientDao getClientDao() {
         return clientDao;
     }
 
-    /**
-     * @return IProductDao
-     */
     public IProductDao getProductDao() {
         return productDao;
     }
 
-    /**
-     * @return IAdminDao
-     */
     public IAdminDao getAdminDao() {
         return adminDao;
     }
 
-    /**
-     * @return IOrderDao
-     */
+
     public IOrderDao getOrderDao() {
         return orderDao;
     }
 
-    /**
-     * @return IOrderProductDao
-     */
+
     public IOrderProductDao getOrderProductDao() {
         return orderProductDao;
     }
 
-    /**
-     * @return IAccountDao
-     */
+
     public IAccountDao getAccountDao() {
         return accountDao;
     }
 
-    /**
-     * @return IStaffDao
-     */
+
     public IStaffDao getStaffDao() {
         return staffDao;
     }
 
-    /**
-     * @return IReviewDao
-     */
+
     public IReviewDao getReviewDao() {
         return reviewDao;
     }

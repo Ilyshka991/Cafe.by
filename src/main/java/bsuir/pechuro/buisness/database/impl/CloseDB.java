@@ -8,15 +8,11 @@ import bsuir.pechuro.exception.service.ServiceException;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-/**
- * class CloseDB created for closing connection with database
- */
+
 public class CloseDB implements ICloseDB {
     private static Logger LOGGER = Logger.getLogger(CloseDB.class);
 
-    /**
-     * @throws ServiceException
-     */
+
     public void closeConnections() throws ServiceException {
         LOGGER.log(Level.DEBUG, "Service: Close Connection");
 

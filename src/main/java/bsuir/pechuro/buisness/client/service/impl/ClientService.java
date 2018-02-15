@@ -14,19 +14,12 @@ import org.apache.log4j.Logger;
 
 import java.util.List;
 
-/**
- * class ClientService created for preparation data before sending queries to database table "client"
- */
+
 public class ClientService implements IClientService {
     private static final Logger LOGGER = Logger.getLogger(ClientService.class);
-    private DaoFactory daoFactory = DaoFactory.getInstance();
     private static final Double DISCOUNT = 0.05;
+    private DaoFactory daoFactory = DaoFactory.getInstance();
 
-    /**
-     * @param order
-     * @return boolean
-     * @throws ServiceException
-     */
     @Override
     public boolean countPoints(Order order) throws ServiceException {
         LOGGER.log(Level.DEBUG, "ClientService: start countPoints");
@@ -38,11 +31,7 @@ public class ClientService implements IClientService {
         }
     }
 
-    /**
-     * @param clientId
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean clearPoints(Integer clientId) throws ServiceException {
         LOGGER.log(Level.DEBUG, "ClientService: start clearPoints");
@@ -53,15 +42,7 @@ public class ClientService implements IClientService {
         }
     }
 
-    /**
-     * @param name
-     * @param surname
-     * @param login
-     * @param password
-     * @param email
-     * @return Client
-     * @throws ServiceException
-     */
+
     @Override
     public Client signUp(String name, String surname, String login, String password, String email) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Client Service: start SignUp");
@@ -85,11 +66,7 @@ public class ClientService implements IClientService {
         return null;
     }
 
-    /**
-     * @param clientLogin
-     * @param clientPassword
-     * @return Client
-     */
+
     @Override
     public Client signIn(String clientLogin, String clientPassword) {
         LOGGER.log(Level.DEBUG, "Client Service: start SignIn");
@@ -106,10 +83,7 @@ public class ClientService implements IClientService {
         }
     }
 
-    /**
-     * @return List<Client>
-     * @throws ServiceException
-     */
+
     @Override
     public List<Client> getAllClients() throws ServiceException {
         LOGGER.log(Level.DEBUG, "Client Service: Start get all clients");
@@ -121,11 +95,7 @@ public class ClientService implements IClientService {
         }
     }
 
-    /**
-     * @param id
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean deleteClient(Integer id) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Client Sevice: Delete client start");
@@ -137,11 +107,7 @@ public class ClientService implements IClientService {
         }
     }
 
-    /**
-     * @param clientId
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean changeClientStatus(Integer clientId) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Client Sevice: Change client status start");
@@ -153,12 +119,7 @@ public class ClientService implements IClientService {
         }
     }
 
-    /**
-     * @param password
-     * @param id
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean checkPassword(String password, Integer id) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Client Service: check password start");
@@ -174,11 +135,7 @@ public class ClientService implements IClientService {
         }
     }
 
-    /**
-     * @param login
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean findClientByLogin(String login) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Client Service:  find by login start");
@@ -193,11 +150,7 @@ public class ClientService implements IClientService {
         }
     }
 
-    /**
-     * @param email
-     * @return Client
-     * @throws ServiceException
-     */
+
     @Override
     public Client findClientByEmail(String email) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Client Service:  find by login start");
@@ -212,12 +165,7 @@ public class ClientService implements IClientService {
         }
     }
 
-    /**
-     * @param password
-     * @param id
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean changePassword(String password, Integer id) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Client Service: change password start");
@@ -233,12 +181,7 @@ public class ClientService implements IClientService {
         }
     }
 
-    /**
-     * @param clientId
-     * @param clientPoint
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean editPoint(Integer clientId, Double clientPoint) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Client Service: edit points start");
@@ -250,11 +193,7 @@ public class ClientService implements IClientService {
         }
     }
 
-    /**
-     * @param clientId
-     * @return Client
-     * @throws ServiceException
-     */
+
     @Override
     public Client getClientById(Integer clientId) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Client Service: get client by id start");

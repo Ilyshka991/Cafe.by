@@ -35,16 +35,20 @@
         <span class="cd-error-message" id="value-mistake-${product.id}">${valume_mistake}</span>
     </p>
     <p class="fieldset">
-        <input type="text" name="cost" class="cost" value="${product.cost}" id="cost-edit-${product.id}" placeholder=${cost_word}>
+        <input type="text" name="cost" class="cost" value="${product.cost}" id="cost-edit-${product.id}"
+               placeholder=${cost_word}>
         <span class="cd-error-message" id="cost-mistake-${product.id}">${cost_mistake}</span>
     </p>
-    <textarea name="description_ru" class="description_ru" value="${product.descriptionRu}" id="descrirtion-ru-edit-${product.id}"
+    <textarea name="description_ru" class="description_ru" value="${product.descriptionRu}"
+              id="descrirtion-ru-edit-${product.id}"
               placeholder=${desc_ru_word}></textarea>
-    <textarea name="description_en" class="description_en" value="${product.descriptionEn}" id="descrirtion-en-edit-${product.id}"
+    <textarea name="description_en" class="description_en" value="${product.descriptionEn}"
+              id="descrirtion-en-edit-${product.id}"
               placeholder=${desc_en_word}></textarea>
 
     <p class="fieldset">
-        <input name="image_name" class="image_name" id="image-name-edit-${product.id}" type="text" value=${choose_file_word}>
+        <input name="image_name" class="image_name" id="image-name-edit-${product.id}" type="text"
+               value=${choose_file_word}>
         <a href="#0" id="a-image-name-edit-${product.id}" class="image-load" onclick="fileclick(${product.id})">""</a>
         <span class="cd-error-message" id="file-mistake-${product.id}">${choose_not_choosen_word}</span>
     </p>

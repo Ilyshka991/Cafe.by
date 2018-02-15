@@ -1,8 +1,6 @@
 package bsuir.pechuro.entity;
 
-/**
- * class Client created to work with clients
- */
+
 public class Client {
     private Integer id;
     private String login;

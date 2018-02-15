@@ -8,20 +8,12 @@ import bsuir.pechuro.factory.dao.DaoFactory;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-/**
- * class AccountService created for preparation data before sending queries to database table "account"
- */
 public class AccountService implements IAccountService {
 
     private static final Logger LOGGER = Logger.getLogger(AccountService.class);
     private DaoFactory daoFactory = DaoFactory.getInstance();
 
 
-    /**
-     * @param clientId
-     * @return Double
-     * @throws ServiceException
-     */
     @Override
     public Double getCashById(Integer clientId) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Account service: start get cash");
@@ -33,11 +25,7 @@ public class AccountService implements IAccountService {
         }
     }
 
-    /**
-     * @param clientId
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean addAccount(Integer clientId) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Account service: start add account");
@@ -55,12 +43,7 @@ public class AccountService implements IAccountService {
         }
     }
 
-    /**
-     * @param clientId
-     * @param orderCostNew
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean editAccount(Integer clientId, Double orderCostNew) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Account service: start edit account");
@@ -72,11 +55,7 @@ public class AccountService implements IAccountService {
         }
     }
 
-    /**
-     * @param clientId
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean findAccountByClientId(Integer clientId) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Account service: start find account");

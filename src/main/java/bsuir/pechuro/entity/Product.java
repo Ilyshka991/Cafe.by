@@ -1,8 +1,6 @@
 package bsuir.pechuro.entity;
 
-/**
- * class Product created to work with products
- */
+
 public class Product {
 
     private Integer id;
@@ -42,7 +40,7 @@ public class Product {
         commonCost = Math.rint(100.0 * (cost * number)) / 100.0;
     }
 
-    public Double getCommonCost(){
+    public Double getCommonCost() {
         return commonCost;
     }
 

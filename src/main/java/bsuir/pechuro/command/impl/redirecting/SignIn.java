@@ -23,20 +23,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-/**
- * class SignIn created to sign in account
- */
+
 public class SignIn implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(SignIn.class);
     private ServiceFactory serviceFactory = ServiceFactory.getInstance();
     private JspPageName jspPageName = JspPageName.INDEX;
     private User user;
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.INFO, "Sign in command start");
@@ -105,9 +99,7 @@ public class SignIn implements ICommand {
         return jspPageName.getPath();
     }
 
-    /**
-     * @param request
-     */
+
     private void diagnoseError(HttpServletRequest request) {
         if (SessionElements.getLocale(request).equals("ru")) {
             request.getSession().setAttribute(AttributeParameterName.HEADER_ERROR.getValue(), "Пользователя с таким логином не существует");
@@ -116,9 +108,7 @@ public class SignIn implements ICommand {
         }
     }
 
-    /**
-     * @param request
-     */
+
     private void diagnoseIncorrectPassword(HttpServletRequest request) {
         if (SessionElements.getLocale(request).equals("ru")) {
             request.getSession().setAttribute(AttributeParameterName.HEADER_ERROR.getValue(), "Неверный пароль");
@@ -127,9 +117,7 @@ public class SignIn implements ICommand {
         }
     }
 
-    /**
-     * @param request
-     */
+
     private void diagnoseBan(HttpServletRequest request) {
         if (SessionElements.getLocale(request).equals("ru")) {
             request.getSession().setAttribute(AttributeParameterName.HEADER_ERROR.getValue(), "Вы заблокированы. Пожалуйста, обратитесь к администратору");

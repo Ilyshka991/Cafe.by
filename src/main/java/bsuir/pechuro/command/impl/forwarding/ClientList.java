@@ -14,18 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-/**
- * class ClientList created for editing clients' data
- */
+
 public class ClientList implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(ClientList.class);
     private JspPageName jspPageName = JspPageName.CLIENTS;
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.INFO, "Start edit clients");

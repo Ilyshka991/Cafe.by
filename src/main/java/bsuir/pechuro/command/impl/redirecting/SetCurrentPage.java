@@ -12,18 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * class SetCurrentPage created for choosing page
- */
+
 public class SetCurrentPage implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(Index.class);
     private JspPageName jspPageName = JspPageName.INDEX;
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         try {

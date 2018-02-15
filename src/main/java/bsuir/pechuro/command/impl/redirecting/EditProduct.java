@@ -17,19 +17,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.IOException;
 
-/**
- * class EditProduct created to edit products
- */
+
 public class EditProduct implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(AddProduct.class);
     private ServiceFactory serviceFactory = ServiceFactory.getInstance();
     private JspPageName jspPageName = JspPageName.INDEX;
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         try {
@@ -55,9 +48,7 @@ public class EditProduct implements ICommand {
         return jspPageName.getPath();
     }
 
-    /**
-     * @param request
-     */
+
     private void diagnoseError(HttpServletRequest request) {
         if (SessionElements.getLocale(request).equals("ru")) {
             request.getSession().setAttribute(AttributeParameterName.HEADER_ERROR.getValue(), "Ошибка! Продукт не изменен");

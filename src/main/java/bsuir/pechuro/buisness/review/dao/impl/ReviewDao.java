@@ -15,9 +15,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * class ReviewDAO created for working with clients' reviews
- */
+
 public class ReviewDao implements IReviewDao {
     private static final Logger LOGGER = Logger.getLogger(ReviewDao.class);
     private static final String ADD_REVIEW = "INSERT INTO cafeby.review (reviewText, reviewMark, clientId) VALUES (?, ?, ?)";
@@ -29,11 +27,7 @@ public class ReviewDao implements IReviewDao {
     private PreparedStatement statement;
     private ResultSet resultSet;
 
-    /**
-     * @param review
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean addReview(Review review) throws DaoException {
         LOGGER.log(Level.DEBUG, "ReviewDao: start addReview");
@@ -62,11 +56,7 @@ public class ReviewDao implements IReviewDao {
         }
     }
 
-    /**
-     * @param id
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean deleteReview(Integer id) throws DaoException {
         LOGGER.log(Level.DEBUG, "ReviewDao: start deleteReview");
@@ -93,10 +83,7 @@ public class ReviewDao implements IReviewDao {
         }
     }
 
-    /**
-     * @return List<Review>
-     * @throws DaoException
-     */
+
     @Override
     public List<Review> getAllReviews() throws DaoException {
         LOGGER.log(Level.DEBUG, "ReviewDao: start getAllReviews");
@@ -122,11 +109,7 @@ public class ReviewDao implements IReviewDao {
         return reviews;
     }
 
-    /**
-     * @param resultSet
-     * @return Review
-     * @throws DaoException
-     */
+
     private Review createReviewByResultSet(ResultSet resultSet) throws DaoException {
         Review review = new Review();
         try {

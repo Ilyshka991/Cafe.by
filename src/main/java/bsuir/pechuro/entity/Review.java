@@ -1,8 +1,6 @@
 package bsuir.pechuro.entity;
 
-/**
- * class Review created to work with reviews
- */
+
 public class Review {
     private String text;
     private Double mark;
@@ -11,7 +9,8 @@ public class Review {
     private String clientSurname;
     private Integer reviewId;
 
-    public Review() {}
+    public Review() {
+    }
 
     public Review(String text, Double mark, Integer clientId) {
         this.text = text;

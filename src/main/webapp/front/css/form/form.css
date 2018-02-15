@@ -211,6 +211,7 @@ input#add {
     box-shadow: 0 0 5px rgba(52, 54, 66, 0.1);
     outline: none;
 }
+
 .cd-form input.has-error {
     border: 1px solid #d76666;
 }
@@ -424,19 +425,19 @@ label#cost_data {
 input#number-for-delete {
     height: 25px;
 }
+
 ul.leaders li:before {
     float: left;
     width: 0;
     white-space: nowrap;
-    content:"____________________"
-    "____________________"
-    "____________________"
-    "____________________"
+    content: "____________________" "____________________" "____________________" "____________________"
 }
+
 ul.leaders span:first-child {
     padding-right: 0.33em;
     background: white
 }
+
 ul.leaders span + span {
     float: right;
     padding-left: 0.33em;

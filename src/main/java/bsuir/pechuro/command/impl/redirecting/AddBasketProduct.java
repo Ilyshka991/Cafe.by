@@ -26,32 +26,22 @@ import java.io.IOException;
 import java.util.List;
 
 
-/**
- * class AddBasketProduct created to add basket
- */
 public class AddBasketProduct implements ICommand {
 
     private static final Logger LOGGER = Logger.getLogger(AddProduct.class);
     private ServiceFactory serviceFactory = ServiceFactory.getInstance();
     private JspPageName jspPageName = JspPageName.BASKET;
-    private Integer productId;
-    private Integer productCount;
-    private Integer clientId;
     private IOrderProductService orderProductService = serviceFactory.getOrderProductService();
     private IOrderService orderService = serviceFactory.getOrderService();
     private IProductService productService = serviceFactory.getProducteService();
     private IOrderProductDao orderProductDao = DaoFactory.getInstance().getOrderProductDao();
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.INFO, "Start add product to basket");
         try {
-            clientId = ((User) request.getSession().getAttribute(AttributeParameterName.USER.getValue())).getId();
+            Integer clientId = ((User) request.getSession().getAttribute(AttributeParameterName.USER.getValue())).getId();
             List<Product> allProducts = productService.getAllProducts();
             IOrderDao orderDao = new OrderDAO();
 
@@ -61,8 +51,8 @@ public class AddBasketProduct implements ICommand {
                 if (request.getParameter(AttributeParameterName.PRODUCT_ID.getValue() + "_" + product.getId()) != null &&
                         request.getParameter(AttributeParameterName.NUMBER_FOR_ADD.getValue() + "_" + product.getId()) != null) {
 
-                    productId = Integer.valueOf(request.getParameter(AttributeParameterName.PRODUCT_ID.getValue() + "_" + product.getId()));
-                    productCount = Integer.valueOf(request.getParameter(AttributeParameterName.NUMBER_FOR_ADD.getValue() + "_" + product.getId()));
+                    Integer productId = Integer.valueOf(request.getParameter(AttributeParameterName.PRODUCT_ID.getValue() + "_" + product.getId()));
+                    Integer productCount = Integer.valueOf(request.getParameter(AttributeParameterName.NUMBER_FOR_ADD.getValue() + "_" + product.getId()));
 
                     Double orderCost = productService.getProductById(productId).getCost();
                     Integer orderId = orderDao.getOrderIdByClientId(clientId);
@@ -93,9 +83,7 @@ public class AddBasketProduct implements ICommand {
         return jspPageName.getPath();
     }
 
-    /**
-     * @param request
-     */
+
     private void diagnoseError(HttpServletRequest request) {
         if (SessionElements.getLocale(request).equals("ru")) {
             request.getSession().setAttribute(AttributeParameterName.HEADER_ERROR.getValue(), "Ничего не выбрано");

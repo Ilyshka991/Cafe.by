@@ -1,8 +1,6 @@
 package bsuir.pechuro.entity;
 
-/**
- * class Staff created to work with staff
- */
+
 public class Staff {
     private int id;
     private String login;

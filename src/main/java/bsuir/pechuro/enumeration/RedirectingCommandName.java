@@ -1,10 +1,7 @@
 package bsuir.pechuro.enumeration;
 
-/**
- * enum JspPageName created to choose command for redirecting
- */
-public enum RedirectingCommandName
-{
+
+public enum RedirectingCommandName {
     INDEX("/cafe.by/index"),
     BASKET("/cafe.by/basket"),
     CLIENT("/cafe.by/edit_clients"),
@@ -23,9 +20,7 @@ public enum RedirectingCommandName
         this.command = command;
     }
 
-    /**
-     * @return String
-     */
+
     public String getCommand() {
         return command;
     }

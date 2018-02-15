@@ -17,19 +17,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * class SignUp created to sign up in site
- */
+
 public class SignUp implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(SignUp.class);
     private ServiceFactory serviceFactory = ServiceFactory.getInstance();
     private JspPageName jspPageName = JspPageName.INDEX;
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.INFO, "Command: Start Sign Up");
@@ -43,9 +37,9 @@ public class SignUp implements ICommand {
             String email = request.getParameter(AttributeParameterName.SIGNUP_EMAIL.getValue());
             Client client = clientService.signUp(name, surname, login, password, email);
             if (client == null) {
-                if(clientService.findClientByLogin(login)) {
+                if (clientService.findClientByLogin(login)) {
                     diagnoseError(request);
-                }else{
+                } else {
                     diagnoseCommonEmail(request);
                 }
             } else {
@@ -64,9 +58,7 @@ public class SignUp implements ICommand {
         return jspPageName.getPath();
     }
 
-    /**
-     * @param request
-     */
+
     private void diagnoseError(HttpServletRequest request) {
         if (SessionElements.getLocale(request).equals("ru")) {
             request.getSession().setAttribute(AttributeParameterName.HEADER_ERROR.getValue(), "Пользовател с таким логином уже сужествует");
@@ -75,9 +67,7 @@ public class SignUp implements ICommand {
         }
     }
 
-    /**
-     * @param request
-     */
+
     private void diagnoseCommonEmail(HttpServletRequest request) {
         if (SessionElements.getLocale(request).equals("ru")) {
             request.getSession().setAttribute(AttributeParameterName.HEADER_ERROR.getValue(), "Пользовател с такой почтой уже существует");

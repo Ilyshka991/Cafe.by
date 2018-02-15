@@ -25,7 +25,7 @@ public interface IOrderDao {
 
     List<Order> getAllOrderedOrders() throws DaoException;
 
-    boolean deleteOrder(Integer orderId) throws  DaoException;
+    boolean deleteOrder(Integer orderId) throws DaoException;
 
     Order getOrderByOrderId(Integer orderId) throws DaoException;
 }

@@ -18,6 +18,6 @@ public interface IAdminService {
 
     boolean changePassword(String password, Integer id) throws ServiceException;
 
-    boolean findAdminByLogin(String login) throws  ServiceException;
+    boolean findAdminByLogin(String login) throws ServiceException;
 
 }

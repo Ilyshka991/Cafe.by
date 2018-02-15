@@ -1,8 +1,6 @@
 package bsuir.pechuro.enumeration;
 
-/**
- * enum AttributeParameterName created to choose Page or Session attributes and parametrs
- */
+
 public enum AttributeParameterName {
     SIGNIN_LOGIN("signin_login"),
     SIGNIN_PASSWORD("signin_password"),
@@ -63,9 +61,7 @@ public enum AttributeParameterName {
         this.value = value;
     }
 
-    /**
-     * @return String
-     */
+
     public String getValue() {
         return value;
     }

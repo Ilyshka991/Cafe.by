@@ -16,38 +16,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * class OrderDAO created for working with clients' orders
- */
 public class OrderDAO implements IOrderDao {
 
     private static final Logger LOGGER = Logger.getLogger(OrderDAO.class);
-    public static String ADD_ORDER = "INSERT INTO cafeby.order (orderType, orderCost,clientId) VALUES(?,?,?)";
-    public static String PAYMENT_ORDER = "INSERT INTO cafeby.order (orderType,orderDate, orderCost,clientId) VALUES(?,?,?,?)";
-    public static String FIND_LAST = "SELECT * FROM cafeby.order WHERE orderId=LAST_INSERT_ID()";
-    public static String GET_ORDERID_BY_CLIENTID = "SELECT cafeby.order.orderId " +
-            "FROM(client join cafeby.order ON client.clientId = cafeby.order.clientId)" +
-            " WHERE client.clientId = ?;";
-    public static String GET_ORDER_BY_CLIENTID = "SELECT * FROM(client join cafeby.order ON client.clientId = cafeby.order.clientId)" +
-            " WHERE client.clientId = ?;";
-    public static String EDIT_ORDER = "UPDATE cafeby.order SET cafeby.order.orderCost = (cafeby.order.orderCost + ?) " +
-            "WHERE cafeby.order.orderId = ?";
-    public static String CLEAR_ORDER = "UPDATE cafeby.order SET cafeby.order.orderCost=0.0 WHERE cafeby.order.orderId=?";
-    public static String GET_ORDERS_BY_CLIENTID = " SELECT * FROM cafeby.order WHERE (cafeby.order.orderType = 'ordered' OR cafeby.order.orderType='payment') AND cafeby.order.clientId=?";
-    public static String GET_ALL_ORDERS_BY_CLIENTID = "SELECT * FROM cafeby.order WHERE cafeby.order.clientId = ?";
     private static final String GET_ALL_ORDERED_ORDERS = "SELECT * FROM cafeby.order WHERE orderType='ordered' OR orderType='payment'";
     private static final String DELETE_ORDER = "DELETE FROM cafeby.order WHERE orderId=?";
     private static final String GET_ORDER_BY_ORDERID = "SELECT * FROM cafeby.order WHERE orderId=?";
+    private static String ADD_ORDER = "INSERT INTO cafeby.order (orderType, orderCost,clientId) VALUES(?,?,?)";
+    private static String PAYMENT_ORDER = "INSERT INTO cafeby.order (orderType,orderDate, orderCost,clientId) VALUES(?,?,?,?)";
+    private static String FIND_LAST = "SELECT * FROM cafeby.order WHERE orderId=LAST_INSERT_ID()";
+    private static String GET_ORDERID_BY_CLIENTID = "SELECT cafeby.order.orderId " +
+            "FROM(client join cafeby.order ON client.clientId = cafeby.order.clientId)" +
+            " WHERE client.clientId = ?;";
+    private static String GET_ORDER_BY_CLIENTID = "SELECT * FROM(client join cafeby.order ON client.clientId = cafeby.order.clientId)" +
+            " WHERE client.clientId = ?;";
+    private static String EDIT_ORDER = "UPDATE cafeby.order SET cafeby.order.orderCost = (cafeby.order.orderCost + ?) " +
+            "WHERE cafeby.order.orderId = ?";
+    private static String CLEAR_ORDER = "UPDATE cafeby.order SET cafeby.order.orderCost=0.0 WHERE cafeby.order.orderId=?";
+    private static String GET_ORDERS_BY_CLIENTID = " SELECT * FROM cafeby.order WHERE (cafeby.order.orderType = 'ordered' OR cafeby.order.orderType='payment') AND cafeby.order.clientId=?";
+    private static String GET_ALL_ORDERS_BY_CLIENTID = "SELECT * FROM cafeby.order WHERE cafeby.order.clientId = ?";
     private ConnectionPool connectionPool;
     private Connection connection;
     private ResultSet resultSet;
     private PreparedStatement statement;
 
-    /**
-     * @param order
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean addOrder(Order order) throws DaoException {
         LOGGER.log(Level.DEBUG, "Order DAO: Add order start");
@@ -77,11 +70,7 @@ public class OrderDAO implements IOrderDao {
         }
     }
 
-    /**
-     * @param clientId
-     * @return Integer
-     * @throws DaoException
-     */
+
     @Override
     public Integer getOrderIdByClientId(Integer clientId) throws DaoException {
         LOGGER.log(Level.DEBUG, "Order DAO: start get orderId by clientId");
@@ -108,13 +97,7 @@ public class OrderDAO implements IOrderDao {
         return orderId;
     }
 
-    /**
-     * @param clientId
-     * @param orderCost
-     * @param productCount
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean editOrder(Integer clientId, Double orderCost, Integer productCount) throws DaoException {
         LOGGER.log(Level.DEBUG, "Order DAO: edit start");
@@ -144,11 +127,7 @@ public class OrderDAO implements IOrderDao {
         }
     }
 
-    /**
-     * @param clientId
-     * @return Order
-     * @throws DaoException
-     */
+
     @Override
     public Order getOrderByClientId(Integer clientId) throws DaoException {
         LOGGER.log(Level.DEBUG, "Order DAO: start get order by clientId");
@@ -174,11 +153,7 @@ public class OrderDAO implements IOrderDao {
         return null;
     }
 
-    /**
-     * @param order
-     * @return Integer
-     * @throws DaoException
-     */
+
     @Override
     public Integer paymentOrder(Order order) throws DaoException {
         LOGGER.log(Level.DEBUG, "Product DAO: Payment order start");
@@ -214,11 +189,7 @@ public class OrderDAO implements IOrderDao {
         return null;
     }
 
-    /**
-     * @param orderId
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean clearOrderCost(Integer orderId) throws DaoException {
         LOGGER.log(Level.DEBUG, "Order DAO: clear order start");
@@ -246,11 +217,7 @@ public class OrderDAO implements IOrderDao {
         }
     }
 
-    /**
-     * @param clientId
-     * @return List<Order>
-     * @throws DaoException
-     */
+
     @Override
     public List<Order> getPaymentOrdersByClientId(Integer clientId) throws DaoException {
         LOGGER.log(Level.DEBUG, "order DAO: Start get orders by clientId");
@@ -279,11 +246,7 @@ public class OrderDAO implements IOrderDao {
         return orders;
     }
 
-    /**
-     * @param clientId
-     * @return List<Order>
-     * @throws DaoException
-     */
+
     @Override
     public List<Order> getAllOrdersByClientId(Integer clientId) throws DaoException {
         LOGGER.log(Level.DEBUG, "order DAO: Start get all orders by clientId");
@@ -312,10 +275,7 @@ public class OrderDAO implements IOrderDao {
         return orders;
     }
 
-    /**
-     * @return List<Order>
-     * @throws DaoException
-     */
+
     @Override
     public List<Order> getAllOrderedOrders() throws DaoException {
         LOGGER.log(Level.DEBUG, "order DAO: Start get all ordered orders");
@@ -340,11 +300,7 @@ public class OrderDAO implements IOrderDao {
         return orders;
     }
 
-    /**
-     * @param orderId
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean deleteOrder(Integer orderId) throws DaoException {
         LOGGER.log(Level.DEBUG, "order DAO: Start delete order");
@@ -371,11 +327,7 @@ public class OrderDAO implements IOrderDao {
         }
     }
 
-    /**
-     * @param orderId
-     * @return Order
-     * @throws DaoException
-     */
+
     @Override
     public Order getOrderByOrderId(Integer orderId) throws DaoException {
         LOGGER.log(Level.DEBUG, "order DAO: Start getOrderByOrderId");
@@ -402,11 +354,7 @@ public class OrderDAO implements IOrderDao {
         return null;
     }
 
-    /**
-     * @param resultSet
-     * @return Order
-     * @throws SQLException
-     */
+
     private Order createOrderByResultSet(ResultSet resultSet) throws SQLException {
         Order order = new Order();
         order.setClientId(resultSet.getInt("clientId"));

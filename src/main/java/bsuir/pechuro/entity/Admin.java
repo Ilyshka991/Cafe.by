@@ -1,8 +1,6 @@
 package bsuir.pechuro.entity;
 
-/**
- * class Admin created to work with administrators
- */
+
 public class Admin {
     private Integer id;
     private String login;

@@ -16,9 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * class AdminDAO created for working with administrators
- */
 public class AdminDAO implements IAdminDao {
     private static final Logger LOGGER = Logger.getLogger(AdminDAO.class);
     private static String GET_ADMIN_BY_LOGIN_AND_PASSWORD = "SELECT * FROM cafeby.admin WHERE adminLogin=? AND adminPassword=?;";
@@ -33,11 +30,7 @@ public class AdminDAO implements IAdminDao {
     private ResultSet resultSet;
     private PreparedStatement statement;
 
-    /**
-     * @param admin
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean addAdmin(Admin admin) throws DaoException {
         LOGGER.log(Level.DEBUG, "Admin DAO: Add admin start");
@@ -66,11 +59,7 @@ public class AdminDAO implements IAdminDao {
         }
     }
 
-    /**
-     * @param id
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean deleteAdmin(Integer id) throws DaoException {
         LOGGER.log(Level.DEBUG, "Admin DAO: Delete admin start");
@@ -98,12 +87,7 @@ public class AdminDAO implements IAdminDao {
         }
     }
 
-    /**
-     * @param login
-     * @param password
-     * @return Admin
-     * @throws DaoException
-     */
+
     @Override
     public Admin signIn(String login, String password) throws DaoException {
         Admin adminEntity = null;
@@ -133,11 +117,7 @@ public class AdminDAO implements IAdminDao {
         return adminEntity;
     }
 
-    /**
-     * @param login
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean findAdminByLogin(String login) throws DaoException {
         LOGGER.log(Level.DEBUG, "Admin DAO: start Find");
@@ -164,10 +144,7 @@ public class AdminDAO implements IAdminDao {
         return false;
     }
 
-    /**
-     * @return List<Admin>
-     * @throws DaoException
-     */
+
     @Override
     public List<Admin> getAllAdmins() throws DaoException {
         LOGGER.log(Level.DEBUG, "Admin DAO: Start get all admins");
@@ -195,12 +172,7 @@ public class AdminDAO implements IAdminDao {
         return admins;
     }
 
-    /**
-     * @param password
-     * @param id
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean checkPassword(String password, Integer id) throws DaoException {
         LOGGER.log(Level.DEBUG, "Admin DAO: Check password start");
@@ -227,12 +199,7 @@ public class AdminDAO implements IAdminDao {
         return false;
     }
 
-    /**
-     * @param password
-     * @param id
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean changePassword(String password, Integer id) throws DaoException {
         LOGGER.log(Level.DEBUG, "Admin DAO: Change password start");
@@ -258,11 +225,7 @@ public class AdminDAO implements IAdminDao {
         return false;
     }
 
-    /**
-     * @param resultSet
-     * @return Admin
-     * @throws DaoException
-     */
+
     private Admin createAdminByResultSet(ResultSet resultSet) throws DaoException {
         Admin admin = new Admin();
         try {

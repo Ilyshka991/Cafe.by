@@ -21,19 +21,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * class RemoveBasketProduct created to remove products  from basket
- */
+
 public class RemoveBasketProduct implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(AddProduct.class);
     private ServiceFactory serviceFactory = ServiceFactory.getInstance();
     private JspPageName jspPageName = JspPageName.BASKET;
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.INFO, "Start remove product from basket");

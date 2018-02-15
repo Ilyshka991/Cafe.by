@@ -8,15 +8,9 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 
-/**
- * class ListTag is a Tag which can choose certain type of list for including
- */
+
 public class ListTag extends TagSupport {
 
-    /**
-     * @return int
-     * @throws JspException
-     */
     @Override
     public int doStartTag() throws JspException {
         User user = (User) pageContext.getSession().getAttribute(AttributeParameterName.USER.getValue());

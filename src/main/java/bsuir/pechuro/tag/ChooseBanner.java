@@ -4,15 +4,9 @@ import bsuir.pechuro.entity.User;
 
 import javax.servlet.jsp.JspException;
 
-/**
- * class ChooseBanner is a function-teg which can choose certain banner for including
- */
+
 public class ChooseBanner {
-    /**
-     * @param obj
-     * @return String
-     * @throws JspException
-     */
+
     public static String chooseBanner(Object obj) throws JspException {
         String banner;
         User user = (User) obj;

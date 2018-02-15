@@ -14,19 +14,11 @@ import java.io.IOException;
         urlPatterns = {"/cafe.by/*"})
 public class SecurityFilter implements Filter {
 
-    /**
-     * @param fConfig
-     */
+
     public void init(FilterConfig fConfig) {
     }
 
-    /**
-     * @param request
-     * @param response
-     * @param chain
-     * @throws IOException
-     * @throws ServletException
-     */
+
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         try {
@@ -57,7 +49,7 @@ public class SecurityFilter implements Filter {
                     return;
                 }
             }
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             HttpServletRequest req = (HttpServletRequest) request;
             HttpServletResponse resp = (HttpServletResponse) response;
             RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher(JspPageName.ERROR.getPath());

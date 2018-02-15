@@ -18,19 +18,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * class ResetPassword created to reset password
- */
+
 public class ResetPassword implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(ResetPassword.class);
     private ServiceFactory serviceFactory = ServiceFactory.getInstance();
     private JspPageName jspPageName = JspPageName.INDEX;
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.INFO, "Reset password start");
@@ -57,9 +51,7 @@ public class ResetPassword implements ICommand {
         return jspPageName.getPath();
     }
 
-    /**
-     * @param request
-     */
+
     private void diagnoseError(HttpServletRequest request) {
         if (SessionElements.getLocale(request).equals("ru")) {
             request.getSession().setAttribute(AttributeParameterName.HEADER_ERROR.getValue(), "Пользователя с такой почтой не найдено");

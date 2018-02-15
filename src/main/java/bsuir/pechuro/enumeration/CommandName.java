@@ -1,8 +1,6 @@
 package bsuir.pechuro.enumeration;
 
-/**
- * enum CommandName created for choosing command and searching such role which can execute it
- */
+
 public enum CommandName {
     SIGN_IN("all"), SIGN_UP("all"), SIGN_OUT("all"), INDEX("all"), WRONG_REQUEST("all"),
     BASKET("client"), CHANGE_LOCALE("all"), ADD_PRODUCT("admin"), ADD_PRODUCT_TO_BASKET("client"),
@@ -11,7 +9,7 @@ public enum CommandName {
     PAYMENT("client"), ADD_REVIEW("client"), ORDER_SHOW("staff"), ORDER_DENY("staff"), ORDER_ACCEPT("staff"), ADD_STAFF("admin"),
     CHANGE_PASSWORD_FORWARD("all"), CHANGE_PASSWORD("all"), STAFF_LIST("admin"), DELETE_STAFF("admin"), DELETE_CLIENT("admin"),
     ADMIN_LIST("admin"), DELETE_ADMIN("admin"), ADD_ADMIN("admin"), DELETE_REVIEW("admin"), EDIT_PRODUCT("admin"),
-    RESET_PASSWORD("all"), RESET_PASSWORD_CONFIRM("all"),DELETE_PRODUCT("admin"), CHANGE_STAFF("admin"),
+    RESET_PASSWORD("all"), RESET_PASSWORD_CONFIRM("all"), DELETE_PRODUCT("admin"), CHANGE_STAFF("admin"),
     CHANGE_ADMIN("admin"), RESET_FORM("all");
 
     private String role;
@@ -20,9 +18,6 @@ public enum CommandName {
         this.role = role;
     }
 
-    /**
-     * @return String
-     */
     public String getRole() {
         return role;
     }

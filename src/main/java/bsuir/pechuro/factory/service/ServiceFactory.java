@@ -17,9 +17,7 @@ import bsuir.pechuro.buisness.review.service.impl.ReviewService;
 import bsuir.pechuro.buisness.staff.service.IStaffService;
 import bsuir.pechuro.buisness.staff.service.impl.StaffService;
 
-/**
- * class ServiceFactory created to choose service for working
- */
+
 public class ServiceFactory {
     private static final ServiceFactory instance = new ServiceFactory();
     private final IAdminService adminService = new AdminService();
@@ -34,65 +32,44 @@ public class ServiceFactory {
     private ServiceFactory() {
     }
 
-    /**
-     * @return ServiceFactory
-     */
+
     public static ServiceFactory getInstance() {
         return instance;
     }
 
-    /**
-     * @return IAdminService
-     */
+
     public IAdminService getAdminService() {
         return adminService;
     }
 
-    /**
-     * @return IOrderProductService
-     */
+
     public IOrderProductService getOrderProductService() {
         return orderProductService;
     }
 
-    /**
-     * @return IProductService
-     */
+
     public IProductService getProducteService() {
         return producteService;
     }
 
-    /**
-     * @return IClientService
-     */
     public IClientService getClientService() {
         return clientService;
     }
 
-    /**
-     * @return IAccountService
-     */
     public IAccountService getAccountService() {
         return accountService;
     }
 
-    /**
-     * @return IOrderService
-     */
     public IOrderService getOrderService() {
         return orderService;
     }
 
-    /**
-     * @return IReviewService
-     */
+
     public IReviewService getReviewService() {
         return reviewService;
     }
 
-    /**
-     * @return IStaffService
-     */
+
     public IStaffService getStaffService() {
         return staffService;
     }

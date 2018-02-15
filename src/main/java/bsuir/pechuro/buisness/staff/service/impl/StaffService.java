@@ -14,19 +14,12 @@ import org.apache.log4j.Logger;
 
 import java.util.List;
 
-/**
- * class StaffService created for preparation data before sending queries to database table "staff"
- */
+
 public class StaffService implements IStaffService {
     private static final Logger LOGGER = Logger.getLogger(StaffService.class);
     private DaoFactory daoFactory = DaoFactory.getInstance();
 
-    /**
-     * @param staffLogin
-     * @param staffPassword
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean signUp(String staffLogin, String staffPassword) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Staff service: start addStaff");
@@ -49,11 +42,7 @@ public class StaffService implements IStaffService {
         return false;
     }
 
-    /**
-     * @param id
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean deleteStaff(Integer id) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Product DAO: Delete staff start");
@@ -67,11 +56,7 @@ public class StaffService implements IStaffService {
         return true;
     }
 
-    /**
-     * @param staffLogin
-     * @param staffPassword
-     * @return Staff
-     */
+
     @Override
     public Staff signIn(String staffLogin, String staffPassword) {
         LOGGER.log(Level.DEBUG, "Staff service: start SignIn");
@@ -88,10 +73,7 @@ public class StaffService implements IStaffService {
         }
     }
 
-    /**
-     * @return List<Staff>
-     * @throws ServiceException
-     */
+
     @Override
     public List<Staff> getAllStaff() throws ServiceException {
         LOGGER.log(Level.DEBUG, "Staff Service: Start get all staff");
@@ -103,12 +85,7 @@ public class StaffService implements IStaffService {
         }
     }
 
-    /**
-     * @param password
-     * @param id
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean checkPassword(String password, Integer id) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Staff Service: check password start");
@@ -125,12 +102,7 @@ public class StaffService implements IStaffService {
         }
     }
 
-    /**
-     * @param password
-     * @param id
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean changePassword(String password, Integer id) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Staff Service: change password start");
@@ -146,11 +118,7 @@ public class StaffService implements IStaffService {
         }
     }
 
-    /**
-     * @param login
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean findStaffByLogin(String login) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Admin Service: find by login start");

@@ -10,5 +10,5 @@ public interface IReviewService {
 
     boolean deleteReview(Integer reviewId) throws ServiceException;
 
-    List<Review> getAllReviews()throws ServiceException;
+    List<Review> getAllReviews() throws ServiceException;
 }

@@ -48,34 +48,19 @@ public class ServletController extends HttpServlet {
         }
     }
 
-    /**
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
-     */
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
-     */
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
-     */
+
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         LOGGER.log(Level.INFO, request.getRequestURI());
         ICommand command = commandProvider.getCommand(request);
@@ -95,11 +80,7 @@ public class ServletController extends HttpServlet {
         command.closeDB();
     }
 
-    /**
-     * @param request
-     * @param response
-     * @throws IOException
-     */
+
     private void errorMessageDirectlyFromResponse(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         response.getWriter().println(" UNKNOWN ERROR");

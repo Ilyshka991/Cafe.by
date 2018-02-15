@@ -22,19 +22,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * class Basket created to get and display data about baskets
- */
+
 public class Basket implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(SignOut.class);
-    private JspPageName jspPageName = JspPageName.BASKET;
     private final ServiceFactory serviceFactory = ServiceFactory.getInstance();
+    private JspPageName jspPageName = JspPageName.BASKET;
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.INFO, "Index command start");
@@ -85,9 +78,7 @@ public class Basket implements ICommand {
         return jspPageName.getPath();
     }
 
-    /**
-     * @param request
-     */
+
     private void diagnoseError(HttpServletRequest request) {
         if (SessionElements.getLocale(request).equals("ru")) {
             request.getSession().setAttribute(AttributeParameterName.BASKET_ERROR.getValue(), "Ничего не найдено");
@@ -96,9 +87,7 @@ public class Basket implements ICommand {
         }
     }
 
-    /**
-     * @param request
-     */
+
     private void rewrite(HttpServletRequest request) {
         request.setAttribute(AttributeParameterName.BASKET_ERROR.getValue(), request.getSession().getAttribute(AttributeParameterName.BASKET_ERROR.getValue()));
         request.getSession().removeAttribute(AttributeParameterName.BASKET_ERROR.getValue());
@@ -106,10 +95,7 @@ public class Basket implements ICommand {
         request.getSession().removeAttribute(AttributeParameterName.ACCOUNT_PAYMENT_ERROR.getValue());
     }
 
-    /**
-     * @param data
-     * @return String
-     */
+
     private String convertDataToString(String data) {
         data = data.substring(0, data.length() - 5);
         String[] strings = data.split(" ");

@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * class CommandProvider created to choose command by command name
- */
+
 public final class CommandProvider {
     private final static CommandProvider instance = new CommandProvider();
     private static final Logger LOGGER = Logger.getLogger(CommandProvider.class);
@@ -59,17 +57,12 @@ public final class CommandProvider {
         repository.put(CommandName.RESET_FORM, new ResetForm());
     }
 
-    /**
-     * @return CommandProvider
-     */
+
     public static CommandProvider getInstance() {
         return instance;
     }
 
-    /**
-     * @param request
-     * @return ICommand
-     */
+
     public ICommand getCommand(HttpServletRequest request) {
         ICommand iCommand = repository.get(CommandName.WRONG_REQUEST);
         String command = request.getRequestURI();

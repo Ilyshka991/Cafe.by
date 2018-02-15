@@ -14,18 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * class DeleteStaff created to delete staff
- */
+
 public class DeleteStaff implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(DeleteStaff.class);
     private JspPageName jspPageName = JspPageName.STAFF;
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.INFO, "Start delete staff");

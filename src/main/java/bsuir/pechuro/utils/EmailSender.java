@@ -9,22 +9,14 @@ import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.util.Properties;
 
-/**
- * class EmailSender created for Send Email by SMTP client
- */
+
 public class EmailSender {
 
     static Properties mailServerProperties = new Properties();
     static Session getMailSession;
     static MimeMessage generateMailMessage;
 
-    /**
-     * @param locale
-     * @param email
-     * @return Integer
-     * @throws MessagingException
-     * @throws IOException
-     */
+
     public static Integer generateAndSendEmail(String locale, String email) throws MessagingException, IOException {
         mailServerProperties.load(EmailSender.class.getClassLoader().getResourceAsStream("mail.properties"));
 
@@ -50,9 +42,7 @@ public class EmailSender {
         return code;
     }
 
-    /**
-     * @return int
-     */
+
     public static int rnd() {
         return (int) (Math.random() * 8999) + 1000;
     }

@@ -14,18 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-/**
- * class AdminList created to get and display data about administrators
- */
+
 public class AdminList implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(StaffList.class);
     private JspPageName jspPageName = JspPageName.ADMIN;
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.INFO, "Command: Start admin command");

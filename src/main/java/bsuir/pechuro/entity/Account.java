@@ -1,8 +1,6 @@
 package bsuir.pechuro.entity;
 
-/**
- * class Account created to work with accounts
- */
+
 public class Account {
 
     private int accountNumber;

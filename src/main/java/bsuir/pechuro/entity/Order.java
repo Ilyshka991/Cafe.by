@@ -1,8 +1,6 @@
 package bsuir.pechuro.entity;
 
-/**
- * class Order created to work with orders
- */
+
 public class Order {
     private Integer id;
     private String date;
@@ -34,7 +32,7 @@ public class Order {
     public Order() {
     }
 
-    public String[] getYear(){
+    public String[] getYear() {
         return date.split("[\\s\\-:]+");
     }
 

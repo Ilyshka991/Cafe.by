@@ -1,8 +1,6 @@
 package bsuir.pechuro.entity;
 
-/**
- * class OrderProduct created to work with products from orders
- */
+
 public class OrderProduct {
     Integer orderId;
     Integer productId;

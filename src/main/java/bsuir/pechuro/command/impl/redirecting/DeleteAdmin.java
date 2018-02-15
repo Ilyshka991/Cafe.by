@@ -14,18 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * class DeleteAdmin created to delete administrators
- */
+
 public class DeleteAdmin implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(DeleteAdmin.class);
     private JspPageName jspPageName = JspPageName.ADMIN;
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.INFO, "Start delete admin");

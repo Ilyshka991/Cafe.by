@@ -16,20 +16,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-/**
- * class FindByType created to display products' with certain type
- */
+
 public class FindByType implements ICommand {
     private static final Logger LOGGER = Logger.getLogger(Index.class);
     private ServiceFactory serviceFactory = ServiceFactory.getInstance();
     private JspPageName jspPageName = JspPageName.INDEX;
     private String productType;
 
-    /**
-     * @param request
-     * @param response
-     * @return String
-     */
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.INFO, "Find command start");
@@ -50,10 +44,7 @@ public class FindByType implements ICommand {
         return jspPageName.getPath();
     }
 
-    /**
-     * @param request
-     * @throws ServiceException
-     */
+
     private void setPageProduct(HttpServletRequest request) throws ServiceException {
         IProductService productService = serviceFactory.getProducteService();
         List<Product> allProducts = productService.getProductByType(productType);

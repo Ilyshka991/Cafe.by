@@ -17,7 +17,7 @@ public interface IClientService {
 
     boolean countPoints(Order order) throws ServiceException;
 
-    boolean clearPoints(Integer clientId) throws ServiceException ;
+    boolean clearPoints(Integer clientId) throws ServiceException;
 
     boolean deleteClient(Integer id) throws ServiceException;
 

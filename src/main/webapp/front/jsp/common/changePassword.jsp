@@ -32,7 +32,7 @@
             <%@include file="/front/html/header.html" %>
 
             <%@include file="/front/html/forms.html" %>
-            
+
             <div id="cd-changePassword">
                 <form method="POST" class="cd-form" id="changePassword-form" action="/cafe.by/change_password">
                     <h2>${change_password_word}</h2>
@@ -57,7 +57,8 @@
                     </p>
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="changePassword-re-new">{re_password_word}</label>
-                        <input class="full-width has-padding has-border" id="changePassword-re-new" name="changePassword_re_new" type="password"
+                        <input class="full-width has-padding has-border" id="changePassword-re-new"
+                               name="changePassword_re_new" type="password"
                                placeholder=${re_new_password_word}>
                         <a href="#0" class="hide-password">""</a>
                         <span id="changePassword-re-new-span" class="cd-error-message">${re_password_mistake}</span>

@@ -14,9 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * class OrderProductDAO created for working with products from all orders
- */
+
 public class OrderProductDAO implements IOrderProductDao {
 
     private static final Logger LOGGER = Logger.getLogger(OrderDAO.class);
@@ -32,11 +30,7 @@ public class OrderProductDAO implements IOrderProductDao {
     private ResultSet resultSet;
     private PreparedStatement statement;
 
-    /**
-     * @param orderProduct
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean addOrderProduct(OrderProduct orderProduct) throws DaoException {
         LOGGER.log(Level.DEBUG, "OrderProduct DAO: Add order start");
@@ -66,12 +60,7 @@ public class OrderProductDAO implements IOrderProductDao {
         }
     }
 
-    /**
-     * @param orderId
-     * @param productId
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean deleteOrderProduct(Integer orderId, Integer productId) throws DaoException {
         LOGGER.log(Level.DEBUG, "Order Product DAO: Delete orderProduct start");
@@ -100,13 +89,7 @@ public class OrderProductDAO implements IOrderProductDao {
         }
     }
 
-    /**
-     * @param productId
-     * @param productCount
-     * @param orderId
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean editOrderProduct(Integer productId, Integer productCount, Integer orderId) throws DaoException {
         LOGGER.log(Level.DEBUG, "Order product DAO: edit start");
@@ -136,12 +119,7 @@ public class OrderProductDAO implements IOrderProductDao {
         }
     }
 
-    /**
-     * @param productId
-     * @param orderId
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean findOrderProduct(Integer productId, Integer orderId) throws DaoException {
         LOGGER.log(Level.DEBUG, "Order product DAO: find start");
@@ -166,11 +144,6 @@ public class OrderProductDAO implements IOrderProductDao {
 
     }
 
-    /**
-     * @param productId
-     * @return Integer
-     * @throws DaoException
-     */
     @Override
     public Integer orderProductCount(Integer productId) throws DaoException {
         LOGGER.log(Level.DEBUG, "Order product DAO: find count start");
@@ -196,12 +169,7 @@ public class OrderProductDAO implements IOrderProductDao {
         return null;
     }
 
-    /**
-     * @param orderIdNew
-     * @param orderId
-     * @return boolean
-     * @throws DaoException
-     */
+
     @Override
     public boolean editOrderProductPayment(Integer orderIdNew, Integer orderId) throws DaoException {
         LOGGER.log(Level.DEBUG, "Order Product DAO: edit order product payment start");

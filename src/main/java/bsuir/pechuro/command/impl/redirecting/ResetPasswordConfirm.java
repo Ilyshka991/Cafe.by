@@ -32,10 +32,10 @@ public class ResetPasswordConfirm implements ICommand {
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         LOGGER.log(Level.INFO, "Reset password confirm start");
         String new_password = request.getParameter(AttributeParameterName.RESET_NEW_PASSWORD.getValue());
-        Client client = (Client)request.getSession().getAttribute("client");
+        Client client = (Client) request.getSession().getAttribute("client");
         IClientService clientService = ServiceFactory.getInstance().getClientService();
         try {
-            if(!clientService.changePassword(new_password,client.getId())){
+            if (!clientService.changePassword(new_password, client.getId())) {
                 diagnoseError(request);
             }
             request.getSession().removeAttribute("client");

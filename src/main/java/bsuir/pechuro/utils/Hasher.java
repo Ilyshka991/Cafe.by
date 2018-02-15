@@ -7,16 +7,11 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * class Hasher created to reliable hash password
- */
+
 public class Hasher {
     private static Logger logger = Logger.getLogger(Hasher.class);
 
-    /**
-     * @param input
-     * @return String
-     */
+
     public static String hashBySha1(String input) {
         String sha1 = null;
         try {

@@ -15,7 +15,7 @@
         <%@include file="/front/js/lib/skel.min.js" %>
     </script>
 
-    <%@include file="/front/html/allBundle.html"%>
+    <%@include file="/front/html/allBundle.html" %>
 
     <title>Cafe</title>
 </head>

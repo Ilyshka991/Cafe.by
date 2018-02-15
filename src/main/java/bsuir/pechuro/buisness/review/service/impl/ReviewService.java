@@ -12,20 +12,11 @@ import org.apache.log4j.Logger;
 import java.util.List;
 
 
-/**
- * class ReviewService created for preparation data before sending queries to database table "review"
- */
 public class ReviewService implements IReviewService {
     private static final Logger LOGGER = Logger.getLogger(ReviewService.class);
     private static final IReviewDao reviewDao = DaoFactory.getInstance().getReviewDao();
 
-    /**
-     * @param text
-     * @param mark
-     * @param clientId
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean addReview(String text, Double mark, Integer clientId) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Review Service: start addReview");
@@ -38,11 +29,7 @@ public class ReviewService implements IReviewService {
         }
     }
 
-    /**
-     * @param reviewId
-     * @return boolean
-     * @throws ServiceException
-     */
+
     @Override
     public boolean deleteReview(Integer reviewId) throws ServiceException {
         LOGGER.log(Level.DEBUG, "Review Service: start deleteReview");
@@ -54,10 +41,7 @@ public class ReviewService implements IReviewService {
         }
     }
 
-    /**
-     * @return List<Review>
-     * @throws ServiceException
-     */
+
     @Override
     public List<Review> getAllReviews() throws ServiceException {
         LOGGER.log(Level.DEBUG, "Review Service: start getAllReviews");
